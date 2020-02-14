@@ -20,8 +20,9 @@ void print_matrix(int a[][10],int r,int c){
 void wave_print(int a[][10],int r,int c){
     for(int i=0;i<c;i++){
         for(int j=0;j<r;j++){
-           if(i%2==0)cout<<a[j][i]<<" ";
-           else cout<<a[r-j-1][i]<<" ";
+           if(i&1)cout<<a[r-j-1][i]<<" ";    //if(i%2==0)cout<<a[j][i]<<" ";  or you can also do this , i&1 means the lsb of i and operation with 1,if 0011&0001=>1
+                                            // else cout<<a[r-j-1][i]<<" ";
+           else cout<<a[j][i]<<" ";
         }
     }}
 
