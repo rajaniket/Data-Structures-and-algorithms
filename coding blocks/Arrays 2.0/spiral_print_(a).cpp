@@ -1,6 +1,4 @@
-// Find the number location in 2-D array which is sorted along the row and column
-// Method-2
-// Search using rows
+// Print Spiral elements of a matrix
 // input => 4 4 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
 #include<iostream>
 #include<cstring>
@@ -20,32 +18,33 @@ void print_matrix(int a[][10],int r,int c){
         cout<<endl;
     }
 }
-
 void spiral_print(int a[][10],int r,int c){
-int i=0,j=0;
-while(c-1>1&&r-1>1){
-for(j;j<c;j++){
+int i=0,j=0,r1=r,c1=c;
+while((c1-1)>0&&(r1-1)>0){
+for(j;j<c1;j++){
     cout<<a[i][j]<<" ";
 }
 j--; // =>j=c-1
 i++;
-for(i;i<r;i++){
+for(i;i<r1;i++){
     cout<<a[i][j]<<" ";
 }
 i--;  //i=r-1
 j--;
-for(j;j>=0;j--){
-   cout<<a[i][j]<<"  ";
+for(j;j>=c-c1;j--){
+
+   cout<<a[i][j]<<" ";
+
 }
 j++; // j=0
 i--;
-for(i;i>0;i--){
+for(i;i>r-r1;i--){
     cout<<a[i][j]<<" ";
 }
 i++; // i=1
 j++;
-c--;
-r--;
+c1--;
+r1--;
 }
 }
 
