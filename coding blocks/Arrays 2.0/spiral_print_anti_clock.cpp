@@ -1,5 +1,6 @@
-// Print Spiral elements of a matrix
+// Print Spiral elements of a matrix anticlock wise
 // input => 4 4 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+
 #include<iostream>
 #include<cstring>
 using namespace std;
@@ -19,35 +20,34 @@ void print_matrix(int a[][10],int r,int c){
     }
 }
 void spiral_print(int a[][10],int r,int c){
-int i=0,j=0,r1=r,c1=c;
-while((c1-1)>0&&(r1-1)>0){
-for(j;j<c1;j++){
-    cout<<a[i][j]<<" ";
+int end_co1=(c-1);
+int end_row=(r-1),start_col=0,start_row=0;
+while(start_col<=end_co1&&start_row<=end_row){
+//Starting row
+if(start_row>end_row){
+for(int i=start_row;i<=end_row;i++){
+    cout<<a[i][start_col]<<" ";
+}}
+start_col++;
+//Starting column
+if(start_col<end_co1){
+for(int j=start_col;j<=end_co1;j++){
+    cout<<a[end_row][j]<<" ";
+}}
+end_row--;
+//Ending Row
+for(int i=end_row;i>=start_row;i--) {
+    cout<<a[i][end_co1]<<" ";
 }
-j--; // =>j=c-1
-i++;
-for(i;i<r1;i++){
-    cout<<a[i][j]<<" ";
+end_co1--;
+//Ending Column
+for(int j=end_co1;j>=start_col;j--){
+    cout<<a[start_row][j]<<" ";
 }
-i--;  //i=r-1
-j--;
-for(j;j>=c-c1;j--){
-
-   cout<<a[i][j]<<" ";
-
-}
-j++; // j=0
-i--;
-for(i;i>r-r1;i--){
-    cout<<a[i][j]<<" ";
-}
-i++; // i=1
-j++;
-c1--;
-r1--;
-}
+start_row++;
 }
 
+}
 int main(){
 int a[10][10];
 int r,c;
@@ -57,4 +57,5 @@ print_matrix(a,r,c);
 //search_element(18,a,r,c);
 spiral_print(a,r,c);
 }
+
 
