@@ -1,3 +1,4 @@
+//Write a program to create a matrix of alternate rectangles of O and X
 // Print this structure
 //  O O O O O
 //  O x x x O
