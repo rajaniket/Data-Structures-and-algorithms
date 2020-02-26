@@ -1,4 +1,5 @@
 //Mytokenizer function (like tokenizer function which is predefined)
+//How tokenizer function works?
 #include<iostream>
 #include<algorithm>
 #include<cstring>
