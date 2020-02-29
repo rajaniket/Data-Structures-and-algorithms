@@ -1,4 +1,13 @@
-//Print all substring
+//Print all substring method 2
+// e.g 
+ /* 1
+    2
+    5
+    55
+    44
+    789 */
+        
+    
 #include<iostream>
 #include<cstring>
 using namespace std;
