@@ -35,7 +35,7 @@ for(int i=start_row;i<=end_row;i++)
 }
 end_col--;
 //ending column
-if(end_row>=start_row)
+if(end_row>=start_row)    // when rows gets conversed then this loop should not run or loop should end
 for(int i=end_col;i>=start_col;i--)
 {
      if(k&1)
@@ -45,7 +45,7 @@ for(int i=end_col;i>=start_col;i--)
 }
 end_row--;
 //starting row
-if(end_col>=start_col)
+if(end_col>=start_col)  // when column gets conversed then this loop should not run or loop should end
 for(int i=end_row;i>=start_row;i--)
 {
        if(k&1)
