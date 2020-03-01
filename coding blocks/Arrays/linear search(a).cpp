@@ -7,7 +7,7 @@ int k,p=0;
 int n=sizeof(arr)/sizeof(int);
 cout<<"Enter number to be search"<<endl;
 cin>>k;
-for(int i=0;i<10;i++){
+for(int i=0;i<n;i++){
 
     if(arr[i]==k){
             cout<<k<<" is present in the array at location "<<i+1<<endl;
