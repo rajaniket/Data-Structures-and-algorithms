@@ -1,4 +1,4 @@
-// linear search
+// Linear search method-2
 #include<iostream>
 using namespace std;
 int main(){
@@ -7,7 +7,7 @@ int k,i=0;
 int n=sizeof(arr)/sizeof(int);
 cout<<"Enter number to be search"<<endl;
 cin>>k;
-for(i=0;i<10;i++){
+for(i=0;i<n;i++){
 
     if(arr[i]==k){
             cout<<k<<" is present in the array at location "<<i+1<<endl;
