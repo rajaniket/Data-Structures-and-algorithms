@@ -36,13 +36,13 @@ for(int j=start_col;j<=end_co1;j++){
 end_row--;
 //Ending Row
 if(start_col<=end_co1){
-for(int i=end_row;i>=start_row;i--) {
+for(int i=end_row;i>=start_row;i--) { // When column converges this loop will not run
     cout<<a[i][end_co1]<<" ";
 }}
 end_co1--;
 //Ending Column
 if(start_row<=end_row){
-for(int j=end_co1;j>=start_col;j--){
+for(int j=end_co1;j>=start_col;j--){ //When row converges this loop will not run
     cout<<a[start_row][j]<<" ";
 }}
 start_row++;
