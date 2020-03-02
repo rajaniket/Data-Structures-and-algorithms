@@ -5,10 +5,10 @@ using namespace std;
 void rotate_arr(int k,char *arr){
 int n=strlen(arr);
 for(int i=n-1;i>=0;i--){
-    arr[i+k]=arr[i];
+    arr[i+k]=arr[i]; // Shifting element forward by k
 }
 for(int i=0;i<k;i++){
-    arr[i]=arr[n+i];
+    arr[i]=arr[n+i];  // bringing last k elements in begning
 }
 arr[n]='\0';
 //cout<<arr;
