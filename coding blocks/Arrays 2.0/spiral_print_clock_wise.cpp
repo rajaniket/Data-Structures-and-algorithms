@@ -34,12 +34,12 @@ for(int i=start_row;i<=end_row;i++){
     cout<<a[i][end_co1]<<" ";
 }
 end_co1--;
-if(end_row>=start_row){
+if(end_row>=start_row){  ////When rows converges this loop will not run
 for(int j=end_co1;j>=start_col;j--){
    cout<<a[end_row][j]<<" ";
 }}
 end_row--;
-if(end_co1>=start_col){
+if(end_co1>=start_col){ //When column converges this loop will not run
 for(int i=end_row;i>=start_row;i--){
     cout<<a[i][start_col]<<" ";
 }}
