@@ -1,36 +1,46 @@
+// Image rotation
+// Rotate a square matrix by 90 degree without using any extra space
 #include<iostream>
 #include<algorithm>
 using namespace std;
-// 1 2 3 4 5 6 7 8 9
-void get_matrix(int a[][3],int r,int c){
-for(int i=0;i<r;i++)
-    for(int j=0;j<c;j++)
+void get_matrix(int a[][10],int n){
+for(int i=0;i<n;i++)
+    for(int j=0;j<n;j++)
 {
     cin>>a[i][j];
 }
 }
-void print_matrix(int a[][3],int r,int c)
+void print_matrix(int a[][10],int n)
 {
-    for(int i=0;i<r;i++){
+    for(int i=0;i<n;i++){
             cout<<endl;
-    for(int j=0;j<c;j++)
-    cout<<a[i][j];
+    for(int j=0;j<n;j++)
+    cout<<a[i][j]<<" ";
 }}
-void transpose(int a[][3],int r,int c){
-for(int i=0;i<1;i++)
-    for(int j=0;j<c;j++)
-        swap(a[i][j],a[j][i]);
-for(int j=c-1;j<c;j++)
-    for(int i=1;i<r;i++)
-        swap(a[i][j],a[j][i]);
+void transpose(int a[][10],int n){
+for(int i=0;i<n;i++)
+    for(int j=i;j<n;j++)
+        swap(a[i][j],a[j][i]); // swaping first row elements with
 }
+void flip(int a[][10],int n){
+for(int i=0;i<n;i++)
+    for(int j=0;j<n-j;j++)
+        swap(a[i][j],a[i][n-j-1]); // swaping first row elements with
+}
+
+
 int main(){
-int r=3,c=3;
+int n=4;
 //cin>>r;
-int a[r][3];
-get_matrix(a,r,c);
-transpose(a,r,c);
-print_matrix(a,r,c);
+int a[n][10];
+get_matrix(a,n);
+print_matrix(a,n);
+cout<<"Transposed Matrix"<<endl;
+transpose(a,n);
+print_matrix(a,n);
+flip(a,n);
+cout<<"After Rotation"<<endl;
+print_matrix(a,n);
 }
 
 
