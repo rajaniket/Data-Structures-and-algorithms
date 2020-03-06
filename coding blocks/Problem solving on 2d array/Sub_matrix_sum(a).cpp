@@ -20,12 +20,12 @@ cout<<endl;
 
 void generate_sum(int a[][10],int r,int c){
 int sum=0;
-for(int i_left=0;i_left<r;i_left++)
-    for(int i_right=0;i_right<c;i_right++)
-       for(int j_left=i_left;j_left<r;j_left++)
-          for(int j_right=i_right;j_right<c;j_right++)
-            for(int m=i_left;m<=j_left;m++)
-              for(int n=i_right;n<=j_right;n++){
+for(int i_left=0;i_left<r;i_left++)         // 1
+    for(int i_right=0;i_right<c;i_right++)  // 2  , 1&2 will give all left top point
+       for(int j_left=i_left;j_left<r;j_left++)        // 4
+          for(int j_right=i_right;j_right<c;j_right++) // 5  ,4&5 will give all right bottom point
+            for(int m=i_left;m<=j_left;m++)      // 5
+              for(int n=i_right;n<=j_right;n++){ // 6  ,5&6 will generate all elements between top point and bottom point
                 sum+=a[m][n];
               }
 }
