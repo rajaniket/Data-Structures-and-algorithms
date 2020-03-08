@@ -20,8 +20,8 @@ cout<<endl;
 
 void generate_sum(int a[][10],int r,int c){
 int sum=0;
-for(int i_left=0;i_left<r;i_left++)
-    for(int i_right=0;i_right<c;i_right++)
+for(int i=0;i<r;i++)
+    for(int j=0;j<c;j++)
  
 int main(){
     int r,c;
