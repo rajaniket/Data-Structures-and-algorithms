@@ -1,5 +1,5 @@
 //Sum of all sub-matrix from a given matrix
-//Method-2
+//Method-2  ---> O(n^4)
 
 #include<iostream>
 #include<string.h>
@@ -30,7 +30,7 @@ for(int j=0;j<c;j++){
     else
     temp[i][j]=cum_sum+temp[i-1][j];
 }}
-cout<<"Cumulative sum "<<endl;
+cout<<"Cumulative sum matrix"<<endl;
 printmatrix(temp,r,c);
 
 for(int i_left=0;i_left<r;i_left++)
@@ -39,13 +39,14 @@ for(int i_left=0;i_left<r;i_left++)
           for(int j_right=i_right;j_right<c;j_right++){
             if(i_left==0&&i_right==0)
                 sum+=temp[j_left][j_right];
-            else sum+=temp[j_left][j_right]-temp[j_left][i_right]-temp[j_]
-            
+            else if(i_left==0)
+            sum+=temp[j_left][j_right]-temp[j_left][i_right-1];
+            else if(i_right==0)
+            sum+=temp[j_left][j_right]-temp[i_left-1][j_right];
+            else  
+            sum+=temp[j_left][j_right]-temp[j_left][i_right-1]-temp[i_left-1][j_right]+temp[i_left-1][i_right-1];
           }
-             
-              
-
-}
+cout<<"sum="<<sum;}
 int main(){
     int r,c;
     cin>>r>>c;
@@ -54,5 +55,4 @@ int main(){
   printmatrix(arr,r,c);
   generate_sum(arr,r,c);
 }
-
 
