@@ -28,6 +28,7 @@ for(int i_left=0;i_left<r;i_left++)         // 1
               for(int n=i_right;n<=j_right;n++){ // 6  ,5&6 will generate all elements between top point and bottom point
                 sum+=a[m][n];
               }
+              cout<<"Sum="<<sum<<endl;
 }
 int main(){
     int r,c;
@@ -37,4 +38,3 @@ int main(){
   printmatrix(arr,r,c);
   generate_sum(arr,r,c);
 }
-
