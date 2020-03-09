@@ -13,7 +13,7 @@ int cumulative_sum[n]={0},max_sum=0,sum;
 cumulative_sum[0]=arr[0];
 cout<<"Cumulative Sum of Elements: ";
 for(int i=1;i<=n;i++){
-  cumulative_sum[i]=cumulative_sum[i-1]+arr[i];
+  cumulative_sum[i]=cumulative_sum[i-1]+arr[i];  //Pre computing 
 }
 for(int i=0;i<n;i++){
 cout<<cumulative_sum[i]<<" ";}
