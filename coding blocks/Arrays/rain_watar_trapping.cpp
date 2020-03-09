@@ -34,7 +34,7 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>a[i];
     }
-    int max_left[n]={0},max_right[n]={0};
+    int max_left[n]={0},max_right[n]={0}; //Max from left and max from right 
             max_left[0]=a[0];
             max_right[n-1]=a[n-1];
         for(int i=1;i<n;i++){
