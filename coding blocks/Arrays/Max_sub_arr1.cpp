@@ -1,4 +1,5 @@
 //Maximum Subarray Sum 1
+// Brute force
 #include<iostream>
 #include<string.h>
 using namespace std;
