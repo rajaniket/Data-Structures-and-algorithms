@@ -23,7 +23,7 @@ int sum=0;
 for(int i=0;i<r;i++)
     for(int j=0;j<c;j++)
       sum+=a[i][j]*(j+1-0)*(c-j)*(i+1-0)*(r-i); // zero indicates left minimum column or top most row ,c->right most column,r->down most column
-
+// permutation and combination (Adding the occurance of each element in all submatrix)
     cout<<"sum="<<sum;
 }
 int main(){
