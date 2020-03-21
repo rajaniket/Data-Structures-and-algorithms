@@ -1,3 +1,5 @@
+// remove consecutive duplicates(m-1 ,O(n^2) )
+// "ccccoooooooodinnnnngggg__bloockksssss"===> coding_blocks
 #include"iostream"
 #include"cstring"
 using namespace std;
