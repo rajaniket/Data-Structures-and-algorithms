@@ -15,8 +15,17 @@ for(int i=0;i<n;i++){
     cin.getline(current,1000);
     len_curr=strlen(current);
     if(len_curr<=len_lg){
+            len_lg=len_curr;
         strcpy(largest,current);
     }
 }
 cout<<current;
 }
+
+
+
+
+
+
+
+
