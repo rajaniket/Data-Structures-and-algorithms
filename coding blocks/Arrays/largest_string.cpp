@@ -1,5 +1,4 @@
-// remove consecutive duplicates(m-2 ,O(n) )
-// "ccoodinggg__bloockksssss"===> coding_blocks
+// Largest string among n strings
 #include"iostream"
 #include"cstring"
 using namespace std;
@@ -19,7 +18,7 @@ for(int i=0;i<n;i++){
         strcpy(largest,current);
     }
 }
-cout<<current;
+cout<<"The largest string is "<<current<<endl;
 }
 
 
