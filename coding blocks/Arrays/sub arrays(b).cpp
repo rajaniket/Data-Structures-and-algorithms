@@ -1,5 +1,11 @@
-// print all possible sub-arrays
-//Method 2
+//print all possible sub-arrays
+//Method 2 (in order of set of 1,2,3,....)
+//a
+//b
+//c
+//ab
+//bc
+//abc
 #include<iostream>
 using namespace std;
 int main(){
