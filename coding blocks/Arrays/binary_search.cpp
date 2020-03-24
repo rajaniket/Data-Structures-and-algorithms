@@ -19,5 +19,7 @@ cout<<"Not found"<<endl;
 }
 int main(){
 int a[7]={10,11,12,13,14,15,16};
-Binary_search(10,a,7);
+int b[6]={10,11,12,13,14,15};
+Binary_search(15,a,7); //(Key,array,length)
+Binary_search(123,b,6);
 }
