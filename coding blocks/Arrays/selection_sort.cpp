@@ -1,8 +1,9 @@
 //Selection sort implementation
+
 #include<iostream>
 #include<string.h>
 using namespace std;
-void selection_sort_ascending(int *a,int l){
+void selection_sort_ascending(int *a,int l){  // In ascending order
     int Min;
 for(int i=0;i<l;i++){
        Min=i;
@@ -13,7 +14,7 @@ for(int i=0;i<l;i++){
     swap(a[i],a[Min]);
 }
 }
-void selection_sort_descending(int *a,int l){
+void selection_sort_descending(int *a,int l){ // In descending order
     int Max;
 for(int i=0;i<l;i++){
        Max=i;
@@ -35,7 +36,7 @@ int a[7]={10,21,2,13,4,25,16};
 selection_sort_ascending(a,7);
 print(a,7);
 int b[7]={10,21,2,13,4,25,16};
-selection_sort_descending(a,7);
+selection_sort_descending(b,7);
 print(b,7);
 
 }
