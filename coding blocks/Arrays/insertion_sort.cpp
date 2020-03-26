@@ -4,13 +4,13 @@
 using namespace std;
 void insertion_sort(int *a,int l){
 for(int i=1;i<=l-1;i++){
-       int  min=a[i];
+       int  element=a[i];
       int j=i-1;
-    while(j>=0 and a[j]>min){
-            a[j+1]=a[j]; 
+    while(j>=0 and a[j]>element){
+            a[j+1]=a[j]; //moving right
         j--;
         }
-        a[j+1]=min;
+        a[j+1]=element;
     }
 }
 void print(int *a,int l){
