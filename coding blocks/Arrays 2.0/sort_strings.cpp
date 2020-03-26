@@ -20,7 +20,7 @@ sort(arr,arr+(p-1));
 for(int i=0;i<p;i++)
     cout<<arr[i]<<endl;
 cout<<"\nSorting reverse lexicographically (reverse alphabetically )"<<endl<<endl;
-sort(arr,arr+p ,rev_comp);
+sort(arr,arr+p ,rev_comp); //rev_comp=>comperator function
 
 for(int i=0;i<p;i++)
     cout<<arr[i]<<endl;
