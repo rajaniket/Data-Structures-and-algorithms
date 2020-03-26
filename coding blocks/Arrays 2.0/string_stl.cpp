@@ -34,7 +34,7 @@ for(int i=0;i<5;i++){
     cout<<arr[i]<<",";
 }
 cout<<endl;
-sort(arr,arr+5,len_sort);
+sort(arr,arr+5,len_sort); // length wise sort =>comperator function
 for(int i=0;i<5;i++){
     cout<<arr[i]<<",";
 }
