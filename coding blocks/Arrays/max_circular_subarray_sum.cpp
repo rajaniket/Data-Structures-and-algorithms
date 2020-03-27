@@ -21,11 +21,12 @@ return c_s;
 }
 int sign_reverse(int k){return -k;}
 
-int max_circular_sum(int *a,int n){
+int max_circular_sum(int *a,int n)
+{
 int non_cir_sum=kadanes(a,n);
 int cuml_sum=cumulative_sum(a,n);
-transform(a,a+n,a,sign_reverse);
-int cir_sum=cuml_sum-(-kadanes(a,n));
+transform(a,a+n,a,sign_reverse); // Reversing the sign
+int cir_sum=cuml_sum-(-kadanes(a,n)); // subtracting new kadanes algorithm result with cummulated sum 
 return non_cir_sum>=cir_sum?non_cir_sum:cir_sum;
 }
 
