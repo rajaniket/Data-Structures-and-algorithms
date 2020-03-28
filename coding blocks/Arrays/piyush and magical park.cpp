@@ -14,17 +14,21 @@ step and strength should always be positive for moving forward.
 Assume that Piyush can shift immediately from last of one row to the start of
 next one without loss of any strength, help out Piyush to escape the park.
 Input Format:
-Four space separated integers N, M, K and S all lie between 0 and 100. Next N lines contains M space separated characters which can be '.', '*' or '#'.
+Four space separated integers N, M, K and S all lie between 0 and 100. 
+Next N lines contains M space separated characters which can be '.', '*' or '#'.
 Constraints:
 All numbers are positive and <= 100.
 Output Format
-Print "Yes" or "No" depending on whether Piyush can escape or not. If the answer is "Yes", also print the maximum strength that he can gather in the park in a new line.
+Print "Yes" or "No" depending on whether Piyush can escape or not. 
+If the answer is "Yes", also print the maximum strength that he can gather in the park in a new line.
+
 Sample Input
 4 4 5 20
 . . * .
 . # . .
 * * . .
 . # * *
+
 Sample Output
 Yes
 13
@@ -65,5 +69,5 @@ char element=a[i][j];
 
 if(s>=k)
     cout<<"Yes"<<endl<<s<<endl;
-else cout<<"No"<<endl;
+else cout<<"No"<<endl<<s<<endl;
 }
