@@ -27,7 +27,7 @@ Find any pair of elements in the array which has sum equal to target element and
 #include<iostream>
 #include<algorithm>
 using namespace std;
-void pair(int *a,int n,int key){
+void num_pair(int *a,int n,int key){
 sort(a,a+n);
 	int i=0,j=n-1;
 	while(i<j){
@@ -50,6 +50,6 @@ int main() {
 	cin>>a[i];
 	int key;
 	cin>>key;
-	pair(a,n,key)
+	num_pair(a,n,key);
 	}
 
