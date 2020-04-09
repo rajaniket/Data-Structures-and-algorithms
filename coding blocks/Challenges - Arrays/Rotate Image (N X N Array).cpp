@@ -1,69 +1,54 @@
-Skip to content
-Search or jump to…
+/*Given a 2D array of size N x N. Rotate the array 90 degrees anti-clockwise.
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@rajaniket 
-rajaniket
-/
-Data-Structures-and-algorithms
-1
-10
- Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security Insights Settings
-Data-Structures-and-algorithms/coding blocks/Arrays 2.0/image_rotation.cpp
-@rajaniket rajaniket Rotate a square matrix by 90 degree without using any extra space
-f412388 on Mar 4
-50 lines (42 sloc)  912 Bytes
-  
-// Image rotation
-// Rotate a square matrix by 90 degree without using any extra space
+Input Format
+First line contains a single integer N. Next N lines contain N space separated integers.
+
+Constraints
+N < 1000
+
+Output Format
+Print N lines with N space separated integers of the rotated array.
+
+Sample Input
+4
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+Sample Output
+4 8 12 16 
+3 7 11 15 
+2 6 10 14 
+1 5 9 13 
+Explanation
+Rotate the array 90 degrees anticlockwise.
+*/
 #include<iostream>
-#include<algorithm>
 using namespace std;
-void get_matrix(int a[][10],int n){
+void read_matrix(int a[][20],int n){
 for(int i=0;i<n;i++)
     for(int j=0;j<n;j++)
-{
     cin>>a[i][j];
 }
+void rotate_image(int a[][20],int n){
+for(int j=0;j<=n-j-1;j++)
+for(int i=0;i<n;i++){
+swap(a[i][j],a[i][n-j-1]);
 }
-void print_matrix(int a[][10],int n)
-{
-    for(int i=0;i<n;i++){
-            cout<<endl;
-    for(int j=0;j<n;j++)
-    cout<<a[i][j]<<" ";
+for(int i=0;i<n;i++){
+for(int j=i;j<n;j++){
+swap(a[i][j],a[j][i]);
 }}
-void transpose(int a[][10],int n){
-for(int i=0;i<n;i++)
-    for(int j=i;j<n;j++)
-        swap(a[i][j],a[j][i]); // swaping first row elements with
+for(int i=0;i<n;i++){
+        cout<<endl;
+for(int j=0;j<n;j++)
+    cout<<a[i][j]<<" ";
 }
-void flip(int a[][10],int n){
-for(int i=0;i<n;i++)
-    for(int j=0;j<n-j;j++)
-        swap(a[i][j],a[i][n-j-1]); // swaping first row elements with
 }
-
-
 int main(){
-int n=4;
-//cin>>r;
-int a[n][10];
-get_matrix(a,n);
-print_matrix(a,n);
-cout<<"Transposed Matrix"<<endl;
-transpose(a,n);
-print_matrix(a,n);
-flip(a,n);
-cout<<"After Rotation"<<endl;
-print_matrix(a,n);
+int n;
+cin>>n;
+int a[20][20];
+read_matrix(a,n);
+rotate_image(a,n);
 }
-
-
-
-
-
