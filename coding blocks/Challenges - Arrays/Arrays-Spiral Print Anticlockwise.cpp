@@ -1,39 +1,59 @@
+/*
+Take as input a 2-d array. Print the 2-D array in spiral form anti-clockwise.
+
+Input Format
+Two integers M(row) and N(colomn) and further M * N integers(2-d array numbers).
+
+Constraints
+Both M and N are between 1 to 10.
+
+Output Format
+All M * N integers separated by commas with 'END' written in the end(as shown in example).
+
+Sample Input
+4 4
+11 12 13 14
+21 22 23 24
+31 32 33 34
+41 42 43 44
+Sample Output
+11, 21, 31, 41, 42, 43, 44, 34, 24, 14, 13, 12, 22, 32, 33, 23, END
+Explanation
+For spiral level anti-clockwise traversal, Go for first column-> last row ->last column-> first row and then do the same traversal for the remaining matrix .
+*/
 #include<iostream>
-#include<cstring>
 using namespace std;
-void read_matrix(int a[][10],int r,int c){
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cin>>a[i][j];
-        }
-    }
+void read_matrix(int a[][20],int m,int n){
+for(int i=0;i<m;i++)
+    for(int j=0;j<n;j++)
+    cin>>a[i][j];
 }
-void print_matrix(int a[][10],int r,int c){
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cout<<a[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+void spiral_print(int a[][20],int m,int n){
+int ER=m-1,EC=n-1,SR=0,SC=0;
+while(ER>=SR&&EC>=SC){
+for(int i=SR;i<=ER;i++)
+    cout<<a[i][SC]<<", ";
+SC++;
+for(int i=SC;i<=EC;i++)
+    cout<<a[ER][i]<<", ";
+ER--;
+if(EC>=SC){
+for(int i=ER;i>=SR;i--)
+    cout<<a[i][EC]<<", ";
 }
-void spiral_print(int a[][10],int r,int c){
-int end_co1=(c-1);
-int end_row=(r-1),start_col=0,start_row=0;
-while(start_col<=end_co1&&start_row<=end_row){
-//Starting row
-
-for(int i=start_row;i<=end_row;i++){
-    cout<<a[i][start_col]<<" ";
+EC--;
+if(ER>=SR){
+for(int i=EC;i>=SC;i--)
+    cout<<a[SR][i]<<", ";
 }
-start_col++;
-//Starting column
-
-for(int j=start_col;j<=end_co1;j++){
-    cout<<a[end_row][j]<<" ";
+SR++;
 }
-end_row--;
-//Ending Row
-if(start_col<=end_co1){
-for(int i=end_row;i>=start_row;i--) { // When column converges this loop will not run
-    cout<<a[i][end_co1]<<" ";
-}}
+cout<<"END";
+}
+int main(){
+int m,n;
+cin>>m>>n;
+int a[20][20];
+read_matrix(a,m,n);
+spiral_print(a,m,n);
+}
