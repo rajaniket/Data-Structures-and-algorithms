@@ -35,7 +35,7 @@ if(i&1)
 	{
     cout<<a[m-1-j][i]<<", ";
 	}
-else cout<<a[j][i]<<", ";
+else cout<<a[j][i]<<", "; //for even 
 }
 cout<<"END";
 }
