@@ -21,13 +21,22 @@ There are many numbers form after inverting the digit. For minimum number, check
 */
 
 
+#include<algorithm>
 #include<iostream>
 using namespace std;
-
-int main() {
-	char a[20];
-	cin.getline(a,20,'\0');
-	int 
-	
+int main(){
+string a;
+cin>>a;
+int i=1;
+if(a[0]>='5'&&a[0]<'9')
+a[0]='9'-a[0]+'0';
+while(a[i]!='\0'){
+if(a[i]>='5')
+a[i]='9'-a[i]+'0';
+i++;
 }
+cout<<a;
+}
+
+
 	
