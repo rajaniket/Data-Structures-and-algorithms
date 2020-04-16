@@ -27,9 +27,9 @@ Upon rearranging the elements of the array , 6054854654 is the largest possible 
 #include<iostream>
 using namespace std;
 bool compare(string a,string b){
-    string n=a+b;
+    string n=a+b;//concating the numbers
     string m=b+a;
-if(n>m)
+if(n>m) // checking biggest one 
 return 1;
 else return 0;
 }
