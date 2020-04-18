@@ -1,4 +1,7 @@
 // Maximum Sub-array Sum , using Kadane's Algo
+// 1 -2 4 2
+//sum=>1 0 4 6
+//max_sum= 1->4->6
 #include<iostream>
 using namespace std;
 int main(){
