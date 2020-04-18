@@ -11,9 +11,7 @@ for(int i=0;i<n;i++){
     for(int j=i;j<n;j++){
         for(int k=i;k<=j;k++){
         sum=sum+arr[k];
-       // cout<<arr[k];
         }
-       // cout<<sum;
         if(sum>max_sum){
         max_sum=sum;
         left=i; right=j;
