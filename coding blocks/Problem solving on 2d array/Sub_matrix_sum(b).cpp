@@ -30,7 +30,7 @@ for(int j=0;j<c;j++){
     else
     temp[i][j]=cum_sum+temp[i-1][j];
 }}
-cout<<"Cumulative sum matrix"<<endl;
+cout<<"Cumulative sum matrix"<<endl; //pre computing
 printmatrix(temp,r,c);
 
 for(int i_left=0;i_left<r;i_left++)
