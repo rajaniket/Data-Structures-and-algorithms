@@ -5,7 +5,7 @@ using namespace std;
 int main(){
 int arr[]={-4,1,3,-2,6,2,-8,-9,4};
 int n=sizeof(arr)/sizeof(int);
-cout<<"You Entered : " ;
+cout<<"You Entered :" ;
 for(int i=0;i<n;i++){
 cout<<arr[i]<<" ";}
 cout<<endl;
@@ -13,7 +13,7 @@ int cumulative_sum[n]={0},max_sum=0,sum;
 cumulative_sum[0]=arr[0];
 cout<<"Cumulative Sum of Elements: ";
 for(int i=1;i<=n;i++){
-  cumulative_sum[i]=cumulative_sum[i-1]+arr[i];  //Pre computing 
+  cumulative_sum[i]=cumulative_sum[i-1]+arr[i];  //Pre computing sum
 }
 for(int i=0;i<n;i++){
 cout<<cumulative_sum[i]<<" ";}
