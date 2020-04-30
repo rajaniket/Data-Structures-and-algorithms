@@ -21,30 +21,44 @@ For the sample case, the Ascii code of a=97 and c=99 ,the difference between c a
 #include<iostream>
 #include<string.h>
 using namespace std;
-void insert_diff(string a){
-int i=1;
-signed char k[2*a.length()];
-k[0]=a[0];
-int j=1;
+void insert_diff(char *a){
+int i=1,j=0;
+signed char s[1000];
 while(a[i]!='\0'){
-if((int)(a[i]-a[i-1])>=0)
-k[j]=(a[i]-a[i-1]+'0');
-else
-{
-k[j]='-';
+s[j]=a[i-1];    // copying first word 
 j++;
-k[j]=(a[i-1]-a[i]+'0');
+int k=(int)(a[i]-a[i-1]);
+if(k>=0&&k<10)  // if k is +ve and less than 10 then only one space is required 
+s[j]=k+'0';
+else if(k<0&&k>-10){   // if k is -ve and greater than -10 then two space is required, one for '-' and 2nd for 'alphabet
+'s[j]='-';
+j++;
+s[j]=(-k)+'0';
 }
+if(k>=0&&k>=10){  // if k is +ve and greater than equal to 10 then two space is required ( e.g 25 --> 2,5)
+s[j]=(k/10)+'0';
 j++;
-k[j]=a[i];
+s[j]=(k%10)+'0';
+}
+else if(k<0&&k<=-10){  //if k is -ve and less than equal to 10 then three space is required ( e.g -25 --> -,2,5)
+s[j]='-';
 j++;
+s[j]=(-k/10)+'0';
+j++;
+s[j]=(-k%10)+'0';
+}
 i++;
+j++;
 }
-k[j]='\0';
-cout<<k;
+s[j]=a[i-1];
+j++;
+s[j]='\0';
+cout<<s;
 }
-int main(){
-string a;
-cin>>a;
+int main()
+{
+char a[100];
+cin.getline(a,100);
 insert_diff(a);
 }
+
