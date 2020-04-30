@@ -26,7 +26,7 @@ void insert_diff(char *a){
 int i=1;
 cout<<a[0];
 while(a[i]!='\0'){
-int k=(int)(a[i]-a[i-1]);
+int k=(int)(a[i]-a[i-1]); // type casting 
 cout<<k<<a[i];
 i++;
 }
