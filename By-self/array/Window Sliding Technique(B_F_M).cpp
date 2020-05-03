@@ -1,3 +1,12 @@
+/*
+Window Sliding Technique (using Brute force)
+
+Input  : arr[] = {1, 4, 2, 10, 23, 3, 1, 0, 20}
+         k = 4 
+Output : 39
+
+*/
+
 #include<iostream>
 #include<algorithm>
 #include<cstring>
