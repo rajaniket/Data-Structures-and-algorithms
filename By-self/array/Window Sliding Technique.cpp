@@ -1,5 +1,5 @@
 /*
-Window Sliding Technique (using Brute force)
+Window Sliding Technique
 
 Input  : arr[] = {1, 4, 2, 10, 23, 3, 1, 0, 20}
          k = 4 
@@ -31,7 +31,8 @@ cout<<max_sum<<endl;
 }
 */
 
-// *******************************using precomputing O(n)*************************************88
+// *******************************using precomputing O(n), like subarray sum*************************************
+/*
 #include<algorithm>
 #include<cstring>
 using namespace std;
@@ -55,6 +56,32 @@ int n=sizeof(arr)/sizeof(int);
 int k=3;
 cout<<max_win_sum(arr,k,n)<<endl;
 }
+*/
+
+//*******************************O(n)*************************************
+#include<iostream>
+#include<algorithm>
+#include<cstring>
+using namespace std;
+int max_win_sum(int *a,int k,int n){
+int max_sum=0,current_sum=0;
+for(int i=0;i<k;i++){
+    current_sum+=a[i];
+    max_sum=max(max_sum,current_sum);
+}
+for(int i=k;i<n;i++){
+    current_sum+=a[i]-a[i-k];
+    max_sum=max(max_sum,current_sum);
+}
+return max_sum;
+}
+int main(){
+int arr[]={1, 4, 2, 10, 23, 3, 1, 0, 20};
+int n=sizeof(arr)/sizeof(int);
+int k=3;
+cout<<max_win_sum(arr,k,n)<<endl;
+}
+
 
 
 
