@@ -22,44 +22,42 @@ Alternatively, we can also swap the b's to make "aaaa". The final answer remains
 
 #include<iostream>
 #include<string.h>
+#include<algorithm>    // 2 aabaabbbbbaaa
 using namespace std;
-int length(char *str, int k){
-int max_length=0;
-int n=strlen(str);
-int freq[2]={0};
-for(int i=0;i<n;i++){
-if(str[i]=='a')
-freq[0]++;
-else freq[1]++;
+int largest(string a,int k,char ch){
+int i=0;
+int j=0;
+int ans=0,current_sum=0,c=0;
+for(j=0;j<a.length()&&c<k;j++){
+    if(a[j]!=ch)
+        c++;
+    if(ch==k)
+    break;
 }
-char alp;
-int s=min(freq[0],freq[1]);
-if(freq[0]<=freq[1])
-    alp='a';
-else alp='b';
-for(int i=0;i<n;i++)
-{
-int c=k;
-if(str[i]==alp)
-s--;
-int j=i;
-    while(c>=0&&j<n){
-     if(str[j]==alp)
-     c--;
-     if(c<0)
-     break;
-     j++;
+while(i<j){
+    while(a[j+1]==ch&&j<a.length()-1){
+        j++;
     }
-max_length=max(max_length,(j-i));
-if(s<k)
-break;
+    current_sum=j-i+1;
+    ans=max(ans,current_sum);
+    if(a[i-1]!=ch && j<a.length()-1){
+    j++;
+    }
+     i++;
+
 }
-return max_length;
+return ans;
 }
-int main(){
+int main()
+{
+string a;
 int k;
-  	cin>>k;
-char str[100];
-cin>>str;
-cout<<length(str,k);
+cin>>k;
+cin>>a;
+int q1,q2;
+q1=largest(a,k,'b');
+q2=largest(a,k,'a');
+int Max=max(q1,q2);
+cout<<Max;
 }
+
