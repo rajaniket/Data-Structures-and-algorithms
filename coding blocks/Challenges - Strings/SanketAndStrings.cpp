@@ -20,6 +20,33 @@ We can swap the a's to b using the 2 swaps and obtain the string "bbbb". This wo
 Alternatively, we can also swap the b's to make "aaaa". The final answer remains the same for both cases.
 */
 
+/* Better solution  o(n) 
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+int main(){
+	int k;
+  	cin>>k;
+    string str;
+    cin>>str;
+    int left=0, ans=0;
+    int count[2] = {0};
+    for (int i=0;i < str.length();i++) {
+        char c =str[i];
+        count[c-'a']++;
+        if(min(count[0], count[1]) > k) {
+            count[str[left]-'a']--;
+            left++;
+        } else {
+            ans++;
+        }
+    }
+    cout<<ans;
+    }
+*/
+
+// it is also o(n) solution
 #include<iostream>
 #include<string.h>
 #include<algorithm>    // 2 aabaabbbbbabba  //58aabbabaabaaababaaaaaaaaaaabaaaabaababaabbabbaaaabaaaaaaaaaaaaaabbbaaaaaaabbbbaaaaaaaaaaabaaaaaaaaaba
