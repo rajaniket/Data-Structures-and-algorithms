@@ -22,28 +22,32 @@ Alternatively, we can also swap the b's to make "aaaa". The final answer remains
 
 #include<iostream>
 #include<string.h>
-#include<algorithm>    // 2 aabaabbbbbaaa
+#include<algorithm>    // 2 aabaabbbbbabba  //58aabbabaabaaababaaaaaaaaaaabaaaabaababaabbabbaaaabaaaaaaaaaaaaaabbbaaaaaaabbbbaaaaaaaaaaabaaaaaaaaaba
+
 using namespace std;
 int largest(string a,int k,char ch){
 int i=0;
 int j=0;
 int ans=0,current_sum=0,c=0;
-for(j=0;j<a.length()&&c<k;j++){
+for(j=0;j<a.length()-1 && c<k;j++){
     if(a[j]!=ch)
         c++;
     if(ch==k)
     break;
 }
+
 while(i<j){
     while(a[j+1]==ch&&j<a.length()-1){
         j++;
     }
     current_sum=j-i+1;
     ans=max(ans,current_sum);
-    if(a[i-1]!=ch && j<a.length()-1){
+
+    if(a[i]!=ch && j<a.length()-1){
     j++;
     }
-     i++;
+    i++;
+
 
 }
 return ans;
