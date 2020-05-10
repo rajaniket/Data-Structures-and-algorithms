@@ -20,30 +20,30 @@ We can swap the a's to b using the 2 swaps and obtain the string "bbbb". This wo
 Alternatively, we can also swap the b's to make "aaaa". The final answer remains the same for both cases.
 */
 
-/* Better solution  o(n) 
+/* // Better solution  o(n) 
 #include<iostream>
 #include<string.h>
 using namespace std;
 
 int main(){
-	int k;
-  	cin>>k;
-    string str;
-    cin>>str;
-    int left=0, ans=0;
-    int count[2] = {0};
-    for (int i=0;i < str.length();i++) {
-        char c =str[i];
-        count[c-'a']++;
-        if(min(count[0], count[1]) > k) {
-            count[str[left]-'a']--;
-            left++;
-        } else {
-            ans++;
-        }
+    int k;
+    cin>>k;
+    string s;
+    cin>>s;
+    int ab_count[2]={0}; // it will store no of a and b 
+    int current_length=0; // it will note maximum length 
+    int i=0; // i-> left , j->right
+    for(int j=0;j<s.length();j++){
+    ab_count[s[j]-'a']++;  // counting a and b
+    if(min(ab_count[0],ab_count[1])<=k) // if minimum from both count is < = k then current_length increases otherwise shift i to forward
+     current_length++;
+    else{
+        ab_count[s[i]-'a']--;  // eliminating the count of i location for the sake of k
+        i++;
     }
-    cout<<ans;
     }
+    cout<<current_length<<endl;
+}
 */
 
 // it is also o(n) solution
@@ -53,24 +53,24 @@ int main(){
 
 using namespace std;
 int largest(string a,int k,char ch){
-int i=0;
-int j=0;
-int ans=0,current_sum=0,c=0;
-for(j=0;j<a.length()-1 && c<k;j++){
+int i=0; // left pointer
+int j=0; // right pointer
+int ans=0,current_sum=0,c=0;  // c->count  it is storing the number of opposite character of ch (means a if ch=b)
+for(j=0;j<a.length()-1 && c<k;j++){ //increasing right pointer until count become equal to k
     if(a[j]!=ch)
         c++;
-    if(ch==k)
+    if(c==k)
     break;
 }
-
-while(i<j){
-    while(a[j+1]==ch&&j<a.length()-1){
+// now applying two pointer approach
+while(i<j){ 
+    while(a[j+1]==ch&&j<a.length()-1){ // checking next element is equal to ch or not  
         j++;
     }
     current_sum=j-i+1;
     ans=max(ans,current_sum);
 
-    if(a[i]!=ch && j<a.length()-1){
+    if(a[i]!=ch && j<a.length()-1){  
     j++;
     }
     i++;
