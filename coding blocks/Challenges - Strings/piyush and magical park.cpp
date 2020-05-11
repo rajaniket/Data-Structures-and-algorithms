@@ -44,7 +44,7 @@ Piyush escaped with final strength = 13.
 //. # . .    (-2-1) #(jump to next row) ===> 16-3=13    --> initially it found '.' so its strength decrease by 2 and 1 more is required to jump to next column
 //* * . .    (5-1) (5-1) (-2-1) (-2)    ===> 13+3=16
 //. # * *    (-2-1) #(end)             ===> 16-3=13
-*/
+
 #include<iostream>
 using namespace std;
 int main(){
