@@ -71,3 +71,55 @@ if(s>=k)
     cout<<"Yes"<<endl<<s<<endl;
 else cout<<"No"<<endl<<s<<endl;
 }
+
+/*
+method-2
+
+#include<iostream>
+using namespace std;
+int main(){
+int m,n,k,s;
+char a[1000][1000];
+cin>>m>>n>>k>>s;
+if(k>s){
+    cout<<"No"<<endl;
+    return 0;
+}
+for(int i=0;i<m;i++)
+    for(int j=0;j<n;j++)
+    cin>>a[i][j];
+
+//for(int i=0;i<m;i++){
+//    cout<<endl;
+//    for(int j=0;j<n;j++){
+//           cout<<a[i][j]<<" ";
+//    }
+//}
+
+int i=0,j=0;
+while(s>k&&i<m){
+if(a[i][j]=='.'){
+s=s-2;}
+else if(a[i][j]=='*'){
+s=s+5;}
+else if(a[i][j]=='#'){
+i++;
+j=0;
+continue;
+}
+j++;
+if(j<n)
+s--;
+else{
+j=0;
+i++;
+}
+}
+if(s>=k)
+    cout<<"Yes"<<endl;
+else cout<<"No"<<endl;
+cout<<s<<endl;
+
+}
+
+*/
