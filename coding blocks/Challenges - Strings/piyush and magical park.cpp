@@ -31,6 +31,8 @@ His strength left is 13. Since this is clearly greater than K=5, his escape was 
 Piyush escaped with final strength = 13.
 */
 
+//__________________________________________________solution________________________________________
+
 // obstacles '.'  -2
 // *  +5
 //blockade '#' , cannot go further #
@@ -38,47 +40,56 @@ Piyush escaped with final strength = 13.
 // row wise walk , -1 strength for every step
 // strength should always >k
 //4 4 5 20
-//. . * .
-//. # . .
-//* * . .
-//. # * *
+//. . * .    (-2-1) (-2-1) (+5-1) (-2)  ===> 20-4=16 in first row      || (-2-1) 2 for obstacle '.' and 1 for jump to next obstacle
+//. # . .    (-2-1) #(jump to next row) ===> 16-3=13    --> initially it found '.' so its strength decrease by 2 and 1 more is required to jump to next column
+//* * . .    (5-1) (5-1) (-2-1) (-2)    ===> 13+3=16
+//. # * *    (-2-1) #(end)             ===> 16-3=13
+*/
 #include<iostream>
 using namespace std;
 int main(){
 int m,n,k,s;
-char a[m][n];
+char a[1000][1000];
 cin>>m>>n>>k>>s;
 if(k>s){
     cout<<"No"<<endl;
     return 0;
 }
-for(int i=0;i<m;i++){
+for(int i=0;i<m;i++)
     for(int j=0;j<n;j++)
     cin>>a[i][j];
-}
+
+//for(int i=0;i<m;i++){
+//    cout<<endl;
+//    for(int j=0;j<n;j++){
+//           cout<<a[i][j]<<" ";
+//    }
+//}
+
 int i=0,j=0;
-while(s>k&&j<n){
-if(a[i][j]=='.')
-s=s-2;
-else if(a[i][j]=='*')
-s=s+5;
+while(s>k&&i<m){
+if(a[i][j]=='.'){
+s=s-2;}
+else if(a[i][j]=='*'){
+s=s+5;}
 else if(a[i][j]=='#'){
-j++;
-i=0;
+i++;
+j=0;
 continue;
 }
-if(j<n-1)
-s--; //for every step
-i++;
-if(i>m-1){
 j++;
-i=0;
+if(j<n)
+s--;
+else{
+j=0;
+i++;
 }
 }
 if(s>=k)
     cout<<"Yes"<<endl;
 else cout<<"No"<<endl;
 cout<<s<<endl;
+
 }
 
 
