@@ -31,8 +31,6 @@ For the given example, Let str1 = "10111" and str2 = "10000", Value at first pos
 #include<iostream>
 #include<string.h>
 using namespace std;
-//1
-//10111 10000   00111
 int main(){
 int k;
 cin>>k;
@@ -49,5 +47,24 @@ i++;
 }
 }
 }
+*/
+
+/*
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main(){
+int k;
+cin>>k;
+while(k>0){
+string str1,str2;
+cin>>str1>>str2;
+int len=str1.length();
+int i=0;
+while(i<len){
+cout<<abs(str1[i]-str2[i]);
+i++;
+}
+
 */
 
