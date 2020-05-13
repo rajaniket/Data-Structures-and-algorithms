@@ -27,14 +27,14 @@ Explanation
 For the given example, Let str1 = "10111" and str2 = "10000", Value at first position of str1 is 1 and first position str2 is 1, hence according to the rule there will be 0 at the first position of the final ans.Similarly, for second position the value at second position of both of the strings is 0,so , there will be 0 at the second position of the final ans.Similarly, for third position the value at third position of str1 is 1 and str2 is 0,so , there will be 1 at the third position of the final ans and So, on.
 */
 
-/*
+/* // Method-1
 #include<iostream>
 #include<string.h>
 using namespace std;
 int main(){
-int k;
-cin>>k;
-while(k>0){
+int test_case;
+cin>>test_case;
+while(test_case>0){
 string str1,str2;
 cin>>str1>>str2;
 int len=str1.length();
@@ -45,18 +45,20 @@ cout<<"0";
 else cout<<"1";
 i++;
 }
+test_case--;
+cout<<endl;
 }
 }
 */
 
-/*
+// method-2
 #include<iostream>
 #include<string.h>
 using namespace std;
 int main(){
-int k;
-cin>>k;
-while(k>0){
+int test_case;
+cin>>test_case;
+while(test_case>0){
 string str1,str2;
 cin>>str1>>str2;
 int len=str1.length();
@@ -65,6 +67,17 @@ while(i<len){
 cout<<abs(str1[i]-str2[i]);
 i++;
 }
+test_case--;
+cout<<endl;
+}
+}
 
-*/
+
+
+
+
+
+
+
+
 
