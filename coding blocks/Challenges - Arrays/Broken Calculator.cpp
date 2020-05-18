@@ -21,30 +21,36 @@ for factorial of 5 we have 5 x 4 x 3 x 2 x 1 = 120
 #include<vector>
 #include<math.h>
 using namespace std;
-int multiply(int n,arr *a,int Count){
+#define MAX 500
+int multiply(int n,int *a,int Count){
 int k,carry=0;
 for(int i=0;i<Count;i++){
-    k=a[i]*n+carry;
-    a[]
-    
+    k=(a[i]*n)+carry;
+    a[i]=k%10;
+    carry=k/10;
 }
 
-
-
+while(carry){
+a[Count]=carry%10;
+carry=carry/10;
+Count++;
+}
 return Count;
 }
-int main(){
-vector<int> a;
-int n;
-cin>>n;
-a[0]='1';
-for(int i=1;i<n;i++){
 
-    
+void fact(int n){
+int a[MAX];
+a[0]=1;
+int Count=1;
+for(int i=2;i<=n;i++){
+Count=multiply(i,a,Count);
+}
+for(int i=Count-1;i>=0;i--)
+cout<<a[i];
 }
 
-
-
-
-
+int main(){
+int n;
+cin>>n;
+fact(n);
 }
