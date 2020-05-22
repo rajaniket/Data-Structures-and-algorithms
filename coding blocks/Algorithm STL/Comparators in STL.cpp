@@ -5,10 +5,11 @@ bool comparator(int a,int b){
 return b<a;
 }
 using namespace std;
-void Bubble_Sort(int *arr,int n,bool (&cp)(int a,int b)){
+// defining bubble sorting function
+void Bubble_Sort(int *arr,int n,bool (&cp)(int a,int b)){ // comparator function as an argument 
 for(int i=0;i<n;i++)
 for(int j=1;j<n-i;j++){
-    if(cp(arr[j],arr[j-1]))  // it will work on the basis of comparator function
+    if(cp(arr[j],arr[j-1]))  // it will work on the basis of comparator function output 
         swap(arr[j-1],arr[j]);
 }
 }
