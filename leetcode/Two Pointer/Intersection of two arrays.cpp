@@ -71,4 +71,24 @@ for(int i:c)
 
 }
 
-// 
+// method-2
+/*
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+     set<int> keep_num1;
+     vector<int> result;
+
+     for(int i:nums1)
+        keep_num1.insert(i);
+
+     for(int j:nums2)
+        if(keep_num1.count(j))
+     {
+         result.push_back(j);
+         keep_num1.erase(j); // erasing that element from set so that in cannot repeat in the vector result
+
+     }
+
+        return result;
+        }
+};
+*/
