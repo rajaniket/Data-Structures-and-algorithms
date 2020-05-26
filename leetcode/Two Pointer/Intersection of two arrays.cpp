@@ -56,7 +56,7 @@ public:
         }
         vector<int> result(store_result.begin(),store_result.end());
        // if(result.size()>1){
-       //     result.erase(result.begin()+1,result.end()-1);
+       //     result.erase(result.begin()+1,result.end()-1);  // if problem is like this ==>   Input: nums1 = [4,9,5,8], nums2 = [9,4,9,8,4]  Output: [4,9] only intersection range 
        // }
         return result;
         }
@@ -70,3 +70,5 @@ for(int i:c)
     cout<<i<<", ";
 
 }
+
+// 
