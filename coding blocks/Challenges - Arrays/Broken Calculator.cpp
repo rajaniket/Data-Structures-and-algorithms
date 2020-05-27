@@ -21,17 +21,17 @@ for factorial of 5 we have 5 x 4 x 3 x 2 x 1 = 120
 #include<vector>
 #include<math.h>
 using namespace std;
-#define MAX 500
-int multiply(int n,int *a,int Count){
+#define MAX 5000
+int multiply(int n,int *a,int Count){   // it will multiply  n with all the element present in array 'a'
 int k,carry=0;
 for(int i=0;i<Count;i++){
     k=(a[i]*n)+carry;
-    a[i]=k%10;
+    a[i]=k%10;  // saving one bit of k into a box of an array 
     carry=k/10;
 }
 
-while(carry){
-a[Count]=carry%10;
+while(carry){ 
+a[Count]=carry%10; 
 carry=carry/10;
 Count++;
 }
@@ -39,11 +39,11 @@ return Count;
 }
 
 void fact(int n){
-int a[MAX];
-a[0]=1;
+int a[MAX]; // it will store result 
+a[0]=1;  
 int Count=1;
 for(int i=2;i<=n;i++){
-Count=multiply(i,a,Count);
+Count=multiply(i,a,Count); //
 }
 for(int i=Count-1;i>=0;i--)
 cout<<a[i];
