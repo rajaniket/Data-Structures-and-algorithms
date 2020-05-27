@@ -13,3 +13,23 @@ Input: numbers = [2,7,11,15], target = 9
 Output: [1,2]
 Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
 */
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        int i=0;
+        int j=numbers.size()-1;
+        while(i<j){
+           int sum=numbers[i]+numbers[j];  // one time calculation for each loop so will take less time
+            if(sum>target)
+                j--;
+            else if(sum<target)
+                i++;
+            else return {i+1,j+1}; // break;
+            
+        }
+        //vector<int> result={i+1,j+1};  // this will increase time e.g 4ms t0 8ms  //comment also increases size
+        //return result;  
+        return {};
+    }
+};
