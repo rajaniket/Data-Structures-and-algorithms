@@ -31,7 +31,7 @@ public:
         int n1=nums1.size();
         int n2=nums2.size();
         // 4 5 9       4 4 8 9 9
-        sort(nums1.begin(),nums1.end());
+        sort(nums1.begin(),nums1.end());   // sorting both vector
         sort(nums2.begin(),nums2.end());
         set<int> store_result;
 
@@ -40,12 +40,12 @@ public:
 
         while(i<n1 && j<n2){
 
-            if(nums1[i]==nums2[j]){
-                store_result.insert(nums1[i]);
-                i++;
+            if(nums1[i]==nums2[j]){   // j focus on nums2 and i focus on nums1  , if both number matches then both i and j will target next number 
+                store_result.insert(nums1[i]); 
+                i++;   
                 j++;
             }
-            else if(nums1[i]>nums2[j]){
+            else if(nums1[i]>nums2[j]){  // if nums1 is > means j should be increase to reach nums1
                 j++;
             }
             else if(nums1[i]<nums2[j])
