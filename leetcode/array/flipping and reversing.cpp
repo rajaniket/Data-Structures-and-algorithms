@@ -20,6 +20,9 @@ Notes:
 
 class Solution {
 public:
+     // bool check(int a){
+     //   return a==0;}
+    
     vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {
        
         for(int i=0;i<A.size();i++)
@@ -27,7 +30,7 @@ public:
         
         for(int i=0;i<A.size();i++)
             for(int j=0;j<A[i].size();j++){
-             A[i][j]=!A[i][j] ;  
+             A[i][j]=!A[i][j] ;  // alternative==> //(A[i][j]==0) ? 1:0; //A[i][j]=check(A[i][j]); you can use check() function instead of this
             }
         return A;
     }
