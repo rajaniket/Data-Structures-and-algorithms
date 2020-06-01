@@ -21,7 +21,7 @@ Notes:
 class Solution {
 public:
      // bool check(int a){
-     //   return a==0;}
+     //   return a==0;}   // returning opposite of input , 1-->0 , 0-->1 
     
     vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {
        
