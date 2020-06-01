@@ -21,7 +21,7 @@ using namespace std;
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
+        sort(nums.begin(),nums.end());  // sorting the vector first then comparing it with index , if doesn't matched means that number is missing.
         int i;
         for(i=0;i<nums.size();i++)
             if(nums[i]!=i){
@@ -37,7 +37,7 @@ public:
       int n=nums.size();
        vector<int> store(n+1,0);  // n+1 because n gives error in lit code
         for(int i=0;i<n;i++)
-            store[nums[i]]++;
+            store[nums[i]]++;   // increamenting those index content which  is persent in nums , the index content with zero will be that missing number 
         int j=0;
         for(j=0;j<n;j++){
         if(store[j]!=1)
@@ -54,7 +54,7 @@ public:
     int missingNumber(vector<int>& nums) {
       int n=nums.size();
       int sum=accumulate(nums.begin(),nums.end(),0);
-        return (n*(n+1)/2)-sum;
+        return (n*(n+1)/2)-sum;  // sum of n number - sum of elements 
     }
 };
 */
