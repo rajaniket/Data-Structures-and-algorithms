@@ -33,3 +33,22 @@ Explanation
 Possible permutations for {1,2,3} are {1,2,3} , {1,3,2} , {2,1,3} , {2,3,1}, {3,1,2} and {3,2,1}. {1,3,2} is the immediate next permutation after {1,2,3}.
 For the second testcase , {3,2,1} is the last configuration so we print the first permutation as its next permutation.
 */
+
+#include<iostream>
+#include<algorithm>
+using namespace std;
+void next_permu(int *a){
+int n;
+cin>>n;
+int arr[n+1]={0};  
+for(int i=0;i<n;i++)
+cin>>arr[i];  // 123 132 213 231
+if(n==1)
+return;
+
+int left=0;
+int right=1;
+while()
+
+
+}
