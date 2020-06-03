@@ -67,3 +67,22 @@ int main()
    }
 }
 
+// method 2 (using upper bound)
+/*
+void nextPermutation(vector<int>& nums){
+int n=nums.size(),i;
+for(i=n-2;i>=0;i--){
+if(nums[i]<nums[i+1])  // 1234 4321
+    break;
+}
+if(i<0)
+{
+    reverse(nums.begin(),nums.end());
+    return;
+}
+reverse(nums.begin()+i+1,nums.end());  // sort(nums.begin()+i+1,nums.end());  // reverse or sort both will work
+int k=upper_bound(nums.begin()+i+1,nums.end(),nums[i])-nums.begin();
+swap(nums[i],nums[k]);
+}
+
+*/
