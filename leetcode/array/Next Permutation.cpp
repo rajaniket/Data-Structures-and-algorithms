@@ -14,17 +14,27 @@ Here are some examples. Inputs are in the left-hand column and its corresponding
 
 */
 
+// method-1
 class Solution {
-    public void nextPermutation(int[] nums) {
-        int n;
-cin>>n;
-int arr[n+1]={0};  
-for(int i=0;i<n;i++)
-cin>>arr[i];  // 123 132 213 231
-if(n==1)
-return;
+public:
+   void nextPermutation(vector<int>& nums){
+int n=nums.size();
+int i;
+for(i=n-2;i>=0;i--){
+if(nums[i]<nums[i+1])  // 1234 4321
+    break;
+}
+if(i<0)
+{
+    reverse(nums.begin(),nums.end());
+    return;
+}
+sort(nums.begin()+i+1,nums.end());
+for(int j=i+1;j<n;j++)
+   if(nums[i]<nums[j]){
+    swap(nums[i],nums[j]);
+    return ;
+   }
+}
+};
 
-int left=0;
-int right=1;
-while()
-    }
