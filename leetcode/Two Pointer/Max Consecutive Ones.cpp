@@ -28,3 +28,21 @@ Note:
 A[i] is 0 or 1 
 
 */
+class Solution {
+public:
+    int longestOnes(vector<int>& A, int K) {
+        int n=A.size();
+        int max=0,left=0;
+        int s[2]={0};
+        for(int i=0;i<n;i++){
+            s[A[i]]++;
+            if(min(s[0],s[1])<=K)
+                max++;
+            else{
+                 s[A[left]]--;
+                 left++;
+                } 
+        }
+        return max;
+    }
+};
