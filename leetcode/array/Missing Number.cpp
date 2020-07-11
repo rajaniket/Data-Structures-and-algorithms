@@ -35,7 +35,7 @@ class Solution {
 public:
     int missingNumber(vector<int>& nums) {
       int n=nums.size();
-       vector<int> store(n+1,0);  // n+1 because n gives error in lit code
+       vector<int> store(n+1,0);  // n+1 because one number is missing so total number is n+1 (for pre computing we have to consider all)
         for(int i=0;i<n;i++)
             store[nums[i]]++;   // increamenting those index content which  is persent in nums , the index content with zero will be that missing number 
         int j=0;
