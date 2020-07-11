@@ -25,15 +25,17 @@ public:
     int maxArea(vector<int>& height) {
       int Max=0;
         int i=0,j=height.size()-1;
-        while(i<height.size()){
-        while(i<j){
-            int calculate=(j-i)*min(height[i],height[j]);
+        while(i<height.size())
+      {
+        while(i<j)
+          {
+        int calculate=(j-i)*min(height[i],height[j]);
         Max=max(Max,calculate);
         j--;
-        }
-        i++;
+          }
+        i++; // shifting i after inner while loop operation
         j=height.size()-1;
-        }
+      }
         return Max;
     }
 };
@@ -50,7 +52,7 @@ public:
             int h=min(height[i],height[j]);
             int calculate=(j-i)*h;
             Max=max(Max,calculate);
-            if(height[i]>=height[j])
+            if(height[i]>=height[j]) // container size decreases on moving so ,will shift those elment which is smaller comparatively
                 j--;
             else i++;
         }
