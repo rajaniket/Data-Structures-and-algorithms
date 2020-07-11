@@ -22,16 +22,42 @@ class Solution {
 public:
      // bool check(int a){
      //   return a==0;}   // returning opposite of input , 1-->0 , 0-->1 
-    
-    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {
-       
-        for(int i=0;i<A.size();i++)
-        reverse(A[i].begin(),A[i].end());
-        
-        for(int i=0;i<A.size();i++)
-            for(int j=0;j<A[i].size();j++){
+                                         
+    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {  
+                                             // 2-d vector
+        for(int i=0;i<A.size();i++){ // A.size() gives number of row 
+           reverse(A[i].begin(),A[i].end()); 
+            for(int j=0;j<A[i].size();j++){   // A[i].size() gives number of column in that row
              A[i][j]=!A[i][j] ;  // alternative==> //(A[i][j]==0) ? 1:0; //A[i][j]=check(A[i][j]); you can use check() function instead of this
             }
+        }
         return A;
     }
 };
+
+// Using for each loop
+/*
+class Solution {
+public:
+    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {
+        for(auto& i : A){
+        reverse(i.begin(),i.end());
+            for(auto& j : i)
+                j=!j;
+        }
+        return A;
+    }
+};
+int main(){
+Solution u;
+vector<vector<int>> a={{1,1,0},{1,0,1},{0,0,0}};
+vector<vector<int>> b=u.flipAndInvertImage(a);
+for(auto i : b){
+        cout<<endl;
+            for(auto j : i){
+             cout<<j<<" ";
+            }
+}
+}
+
+*/
