@@ -17,6 +17,25 @@ Your runtime complexity should be less than O(n2).
 There is only one duplicate number in the array, but it could be repeated more than once.
 */
 
+// o(n) solution
+class Solution {
+public:
+   int findDuplicate(vector<int>& nums) {
+        int n=nums.size();
+        int i;
+        for(i=0;i<n;i++){
+          int k=nums[abs(nums[i])-1];
+           if(k>0)
+              nums[abs(nums[i])-1]*=-1;
+           else break;
+            }
+       return abs(nums[i]);
+   }
+};
+
+
+// nlogn solution
+/*
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
@@ -29,3 +48,4 @@ public:
     }
     
 };
+*/
