@@ -16,3 +16,27 @@ Note:
 A is sorted in non-decreasing order.
 
 */
+
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& A) {
+        int n=A.size();
+        int left=0,right=n-1;
+        int i=n-1;
+        vector<int> result(n);
+       while(left<=right){
+           if(abs(A[left])>=abs(A[right]))
+           {
+               result[i--]=A[left]*A[left];
+               left++;
+           }
+           else
+           {
+               result[i--]=A[right]*A[right];
+               right--;
+           }
+
+       }
+        return result;
+    }
+};
