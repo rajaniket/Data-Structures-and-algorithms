@@ -46,7 +46,7 @@ int main(){
 }
 */
 
-// it is also o(n) solution
+// m-2
 #include<iostream>
 #include<string.h>
 #include<algorithm>    // 2 aabaabbbbbabba  //58aabbabaabaaababaaaaaaaaaaabaaaabaababaabbabbaaaabaaaaaaaaaaaaaabbbaaaaaaabbbbaaaaaaaaaaabaaaaaaaaaba
