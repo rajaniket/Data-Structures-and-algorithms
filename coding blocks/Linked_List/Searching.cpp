@@ -134,15 +134,29 @@ bool Search(node *head,int key){
     return false;
 }
 
+bool recursive_search(node *head,int key){
+    if(head==NULL){
+        return false;
+    }
+    else if(head->data==key)
+        return true;
+    else
+       return recursive_search(head->next,key);
+}
+
 int main(){
 node *head=NULL;
-insert_At_Head(head,5);
+insert_At_Head(head,15);
 insert_At_Head(head,3);
-insert_At_Head(head,2);
+insert_At_Head(head,12);
 insert_At_Head(head,1);
-insert_At_Head(head,0);
+insert_At_Head(head,10);
 print(head);
-if(Search(head,4))
+//if(Search(head,16))
+//    cout<<"Found"<<endl;
+//else cout<<"Not Found"<<endl;
+//}
+if(recursive_search(head,15))
     cout<<"Found"<<endl;
 else cout<<"Not Found"<<endl;
 }
