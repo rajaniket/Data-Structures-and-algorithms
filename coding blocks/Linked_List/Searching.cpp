@@ -141,7 +141,7 @@ bool recursive_search(node *head,int key){
     else if(head->data==key)
         return true;
     else
-       return recursive_search(head->next,key);
+       return recursive_search(head->next,key);  // or recursive_search(head->next,key) both will work;
 }
 
 int main(){
