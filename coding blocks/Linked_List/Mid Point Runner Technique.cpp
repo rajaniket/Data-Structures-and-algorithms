@@ -66,7 +66,7 @@ if(head==NULL or head->next==NULL){
         return head;
     }
 node* slow=head;
-node *fast=head->next;
+node *fast=head->next; // this is because we want 2 as a mid point in 1->2->3->4 , if consider fast=head 3 would have our mid point6 in case of even , for odd both will give same o/p.
 while(fast!=NULL && fast->next!=NULL){
     slow=slow->next;
     fast=fast->next->next;
